@@ -25,11 +25,17 @@ export default function LogoPreview({ downloadTrigger }) {
     setStorageValue(storageData);
   }, [updateStorage]);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   useEffect(() => {
-    if (downloadTrigger) {
+    if (downloadTrigger && imageLoaded) {
       downloadPngLogo();
     }
-  }, [downloadTrigger]);
+  }, [downloadTrigger, imageLoaded]);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
 
   const downloadPngLogo = () => {
     const downloadLogo = document.getElementById("downloadLogo");
@@ -62,6 +68,7 @@ export default function LogoPreview({ downloadTrigger }) {
         >
           {storageValue?.icon?.includes("png") ? (
             <img
+              onLoad={handleImageLoad}
               src={`https://logoexpress.tubeguruji.com/png/${storageValue?.icon}`}
               alt={`${storageValue?.icon}`}
               style={{
