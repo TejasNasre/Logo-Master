@@ -9,12 +9,17 @@ import { UpdateStorageContext } from "./context/UpdateStorageContext.js";
 export default function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [updateStorage, setUpdateStorage] = useState({});
+  const [downloadIcon, setDownloadIcon] = useState();
+
+  const handleDownloadClick = () => {
+    setDownloadIcon(Date.now());
+  };
   return (
     <>
       <UpdateStorageContext.Provider
         value={{ updateStorage, setUpdateStorage }}
       >
-        <Header />
+        <Header onDownloadClick={handleDownloadClick} />
         <div className="w-64 fixed">
           <SideNav selectedIndex={(index) => setSelectedIndex(index)} />
         </div>
@@ -23,7 +28,7 @@ export default function App() {
             {selectedIndex == 0 ? <IconController /> : <BackgroundController />}
           </div>
           <div className="flex justify-center items-center w-[50%] h-screen">
-            <LogoPreview />
+            <LogoPreview downloadTrigger={downloadIcon} />
           </div>
         </div>
       </UpdateStorageContext.Provider>

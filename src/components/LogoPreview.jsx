@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import html2canvas from "html2canvas";
 import { UpdateStorageContext } from "@/context/UpdateStorageContext";
 import { useContext } from "react";
 import { icons } from "lucide-react";
 
-
-export default function LogoPreview() {
+export default function LogoPreview({ downloadTrigger }) {
   const [storageValue, setStorageValue] = useState(null);
   const { updateStorage, setUpdateStorage } = useContext(UpdateStorageContext);
 
@@ -25,6 +25,25 @@ export default function LogoPreview() {
     setStorageValue(storageData);
   }, [updateStorage]);
 
+  useEffect(() => {
+    if (downloadTrigger) {
+      downloadPngLogo();
+    }
+  }, [downloadTrigger]);
+
+  const downloadPngLogo = () => {
+    const downloadLogo = document.getElementById("downloadLogo");
+    html2canvas(downloadLogo, {
+      backgroundColor: null,
+    }).then((canvas) => {
+      const pngImage = canvas.toDataURL("image/png");
+      const downloadLink = document.createElement("a");
+      downloadLink.href = pngImage;
+      downloadLink.download = `${storageValue?.icon}`;
+      downloadLink.click();
+    });
+  };
+
   return (
     <>
       <div
@@ -34,18 +53,31 @@ export default function LogoPreview() {
         }}
       >
         <div
+          id="downloadLogo"
           className="h-full w-full flex justify-center items-center"
           style={{
             borderRadius: storageValue?.bgRound,
             background: storageValue?.bgColor,
           }}
         >
-          <Icon
-            name={storageValue?.icon}
-            color={storageValue?.iconColor}
-            size={storageValue?.iconSize}
-            rotate={storageValue?.iconRotate}
-          />
+          {storageValue?.icon?.includes("png") ? (
+            <img
+              src={`/png/${storageValue?.icon}`}
+              alt={`${storageValue?.icon}`}
+              style={{
+                width: storageValue?.iconSize,
+                transform: `rotate(${storageValue?.iconRotate}deg)`,
+                backgroundColor: storageValue?.iconBgColor,
+              }}
+            />
+          ) : (
+            <Icon
+              name={storageValue?.icon}
+              color={storageValue?.iconColor}
+              size={storageValue?.iconSize}
+              rotate={storageValue?.iconRotate}
+            />
+          )}
         </div>
       </div>
     </>

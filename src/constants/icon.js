@@ -1,4 +1,5 @@
 export const iconList = [
+  "AArrowDown",
   "Accessibility",
   "Activity",
   "AirVent",
@@ -57,7 +58,6 @@ export const iconList = [
   "ArrowDown01",
   "ArrowDown10",
   "ArrowDownAZ",
-  ,
   "ArrowDownFromLine",
   "ArrowDownLeft",
   "ArrowDownNarrowWide",
