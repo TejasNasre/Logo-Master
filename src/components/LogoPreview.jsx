@@ -47,7 +47,7 @@ export default function LogoPreview({ downloadTrigger }) {
   return (
     <>
       <div
-        className="border shadow-sm w-[400px] h-[400px] outline-dotted outline-gray-300 bg-gray-200"
+        className="border shadow-sm w-[400px] h-[400px] outline-dotted outline-black-300 bg-transpraent"
         style={{
           padding: storageValue?.bgPadding,
         }}

@@ -13,25 +13,20 @@ export default function SideNav({ selectedIndex }) {
       name: "Background",
       icon: <SendToBack />,
     },
-    {
-      id: 3,
-      name: "Upgrade",
-      icon: <ShieldPlus />,
-    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <>
-      <div className="border shadow-sm h-screen">
+      <div className="border-r-2 shadow-sm border-black h-screen p-3">
         {menuList.map((menu, index) => (
           <h2
             onClick={() => {
               setActiveIndex(index);
               selectedIndex(index);
             }}
-            className={`p-3 text-lg px-7 text-gray-500 my-2 cursor-pointer hover:bg-primary hover-text-white flex gap-2 items-center ${
-              activeIndex == index && "bg-primary text-white"
+            className={`p-3 text-lg px-7 my-2 cursor-pointer flex rounded-full gap-2 items-center text-black hover:text-white hover:bg-primary ${
+              activeIndex == index && "rounded-full border-2 border-black"
             }`}
             key={index}
           >

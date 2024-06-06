@@ -39,7 +39,7 @@ export default function IconList({ setSelectedIcon }) {
       <div>
         <label htmlFor="icon">Icon</label>
         <div
-          className="p-3 cursor-pointer bg-gray-200 rounded-md w-[50px] h-[50px] my-2 flex items-center justify-center"
+          className="p-3 cursor-pointer border-2 border-black rounded-md w-[50px] h-[50px] my-2 flex items-center justify-center"
           onClick={() => setOpenDialog(true)}
         >
           {icon?.includes("png") ? (
@@ -67,7 +67,7 @@ export default function IconList({ setSelectedIcon }) {
                     {iconList.map((i, idx) => (
                       <div
                         key={idx}
-                        className="border shadow-sm p-3 flex justify-center items-center rounded-sm cursor-pointer"
+                        className="border-2 border-black shadow-sm p-3 flex justify-center items-center rounded-sm cursor-pointer"
                         onClick={() => {
                           setSelectedIcon(i);
                           setOpenDialog(false);
@@ -84,7 +84,7 @@ export default function IconList({ setSelectedIcon }) {
                     {pngIcons.map((i, idx) => (
                       <div
                         key={idx}
-                        className="border shadow-sm p-3 flex justify-center items-center rounded-sm cursor-pointer w-[50px] h-[50px]"
+                        className="border-2 border-black shadow-sm p-3 flex justify-center items-center rounded-sm cursor-pointer w-[50px] h-[50px]"
                         onClick={() => {
                           setSelectedIcon(i);
                           setOpenDialog(false);

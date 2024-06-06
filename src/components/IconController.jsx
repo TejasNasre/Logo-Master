@@ -30,7 +30,7 @@ export default function IconController() {
   }, [size, rotate, color, icon]);
   return (
     <>
-      <div>
+      <div className="text-black">
         <IconList setSelectedIcon={(icon) => setIcon(icon)} />
         <div className="py-2">
           <label
