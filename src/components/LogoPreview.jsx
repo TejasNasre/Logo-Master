@@ -39,7 +39,7 @@ export default function LogoPreview({ downloadTrigger }) {
       const pngImage = canvas.toDataURL("image/png");
       const downloadLink = document.createElement("a");
       downloadLink.href = pngImage;
-      downloadLink.download = `${storageValue?.icon}`;
+      downloadLink.download = `${storageValue?.icon}.png`;
       downloadLink.click();
     });
   };
@@ -62,7 +62,7 @@ export default function LogoPreview({ downloadTrigger }) {
         >
           {storageValue?.icon?.includes("png") ? (
             <img
-              src={`/png/${storageValue?.icon}`}
+              src={`https://logoexpress.tubeguruji.com/png/${storageValue?.icon}`}
               alt={`${storageValue?.icon}`}
               style={{
                 width: storageValue?.iconSize,
