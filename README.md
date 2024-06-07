@@ -27,7 +27,7 @@ To get started with Logo Master, follow these steps:
 
    ```
    git clone https://github.com/TejasNasre/Logo-Master.git
-   cd logo-master
+   cd Logo-Master
    ```
 
 2. **Install the dependencies:**
