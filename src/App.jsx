@@ -24,7 +24,7 @@ export default function App() {
           <SideNav selectedIndex={(index) => setSelectedIndex(index)} />
         </div>
         <div className="h-screen w-[100%] ml-64 flex flex-col md:flex-row fixed">
-          <div className="w-[auto] h-screen flex flex-col  shadow-sm p-5 pb-[5rem] overflow-auto border border-r-black scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-black-400">
+          <div className="w-[auto] h-screen flex flex-col  shadow-sm p-5 pb-[5rem] overflow-auto border-r-2 border-r-black scrollbar-thin scrollbar-thumb-gray-900 scrollbar-track-black-400">
             {selectedIndex == 0 ? <IconController /> : <BackgroundController />}
           </div>
           <div className="flex justify-center items-center w-full md:w-[56%] h-screen pb-[5rem]">
