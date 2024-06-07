@@ -11,11 +11,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/png": {
-        target: "https://logoexpress.tubeguruji.com",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/png/, ""),
-      },
+      "/png": "https://logoexpress.tubeguruji.com/",
     },
   },
 });
