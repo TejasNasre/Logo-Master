@@ -44,7 +44,7 @@ export default function IconList({ setSelectedIcon }) {
         >
           {icon?.includes("png") ? (
             <img
-              src={`https://logoexpress.tubeguruji.com/png/${icon}`}
+              src={`/png/${icon}`}
               alt={`${icon}`}
             />
           ) : (
