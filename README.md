@@ -58,8 +58,8 @@ To get started with Logo Master, follow these steps:
 
 ## Contributing
 
-We welcome contributions! Please see the CONTRIBUTING.md file for guidelines on how to contribute to this project.
+We welcome contributions! Please see the [./CONTRIBUTING.md][CONTRIBUTING.md] file for guidelines on how to contribute to this project.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more information.
+This project is licensed under the MIT License. See the [./LICENSE][LICENSE] file for more information.
